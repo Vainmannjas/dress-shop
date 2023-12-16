@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "img": "https://www.sabellino.ru/upload/iblock/857/tknzy9s93svm5wi5d8dpupi38nst3rgc/80f43a0c-8ca8-11eb-80ec-00155dd88516_bb4e40ee-e340-11ed-80ed-00155dd88516.jpg",
+      "name": "Платье из вискозы",
+      "price": 7990
+    },
+    {
+      "id": 2,
+      "img": "https://saratov.unirenter.ru/upload/iblock/648/yj7z97jfkp8vm7ooclkxua1w8kg64uxz.jpg",
+      "name": "Вечернее платье в пол с цветочной вышивкой",
+      "price": 14990
+    },
+    {
+      "id": 3,
+      "img": "https://postmeridiem-brand.com/upload/resize_cache/webp/upload/iblock/405/ov37mux9jx9c1q3mxlrbp4i0pce88lhf.webp",
+      "name": "Платье из вискозы",
+      "price": 9990
+    }
+  ]
+}

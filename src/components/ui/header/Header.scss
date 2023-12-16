@@ -1,0 +1,48 @@
+.header {
+    padding-top: 20px;
+    background-color: #fff;
+    // position: fixed;
+}
+.header__row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #D9D9D9;
+}
+.header__input input{
+    // background-color: #F4F4F4;
+    width: 420px;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, .1);
+}
+.header__input input:focus {
+    box-shadow: 0px 0px 5px 3px rgba(173, 216, 230, 1);
+}
+.header__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-left: 284px;
+}
+.header__user-items {
+    display: flex;
+    gap: 30px;
+    margin-left: 513px;
+}
+.user-item__favorite {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.user-item__cart {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.user-item__user {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

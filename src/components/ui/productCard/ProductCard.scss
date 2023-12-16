@@ -1,0 +1,25 @@
+.card {
+    margin-top: 50px;
+    margin-bottom: 17px;
+    &:hover {
+        outline: 10px solid #ffffff;
+        border-radius: 5px;
+        box-shadow: 15px -15px 15px -15px rgba(0, 0, 0, 20);
+    }
+}
+
+.card__img {
+    img {
+        min-width: 290px;
+        min-height: 404px;
+        border-radius: 5px;
+    }
+}
+.card__width {
+    max-width: 290px;
+    max-height: 578px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}

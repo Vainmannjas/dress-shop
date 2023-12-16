@@ -1,0 +1,12 @@
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
+}
+a {
+    color: var(--text-black);
+    &:hover {
+        color: #a5a5a5;
+    }
+}

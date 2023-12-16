@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans&display=swap');
+@import url('./reset.scss');
+
+
+:root {
+/* =====  Colors  ===== */
+    --bg-color: #F0F0F0;
+    --text-black: #000;
+    --text-white: #F2F2F2;
+}
+
+html,
+body {
+    font-family: 'Rethink Sans', sans-serif;
+    background-color: var(--bg-color);
+	color: var(--text-black);
+}
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1670px;
+}
