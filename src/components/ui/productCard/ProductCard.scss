@@ -33,7 +33,7 @@
 }
 .card__width {
     max-width: 290px;
-    max-height: 578px;
+    min-height: 580px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
