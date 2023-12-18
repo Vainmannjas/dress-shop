@@ -9,8 +9,10 @@ import { useQuery } from '@tanstack/react-query'
 
 const Home = () => {
   // Here I understood how to work a bit with react-query. It works!
-  const {data} = useQuery({
+  const {data, isLoading} = useQuery({
     queryKey: ['products'],  queryFn: () => ProductService.getAll()})
+
+    if(isLoading) return <p>Loading...</p>
 
 
   return (

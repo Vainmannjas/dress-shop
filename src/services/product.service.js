@@ -11,6 +11,8 @@ export const ProductService = {
 
         return response.data[0]
     },
-
+    async create(data) {
+        return axios.post('http://localhost:3000/products', data)
+    },
 }
 

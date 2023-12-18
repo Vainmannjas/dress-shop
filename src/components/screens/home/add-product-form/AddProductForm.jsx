@@ -1,15 +1,24 @@
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import styles from './AddProductForm.module.scss'
 import {useForm} from 'react-hook-form'
+import { ProductService } from '../../../../services/product.service'
 
 const AddProductForm = () => {
   const {register, reset, handleSubmit, formState: {errors}} = useForm({
     mode: 'onChange'
   })
 
-  const createProduct = data => {
-    // setProducts(prev => [{id: prev.length + 1, ...data}, ...prev ])
+  const queryClient = useQueryClient()
 
-    reset()
+  const {mutate} = useMutation({
+    mutationKey: ['create product'], mutationFn: (data) => ProductService.create(data), 
+      onSuccess: () => {
+        queryClient.invalidateQueries('product')
+        reset()
+  }})
+
+  const createProduct = data => {
+    mutate(data)
   }
 
   return (
