@@ -1,57 +1,52 @@
-import { useState } from 'react'
-// import AddToCard from '../../../ui/addtocard/AddToCard'
 import styles from './AddProductForm.module.scss'
-
-
-const clearData = {
-  name: '',
-  img: '',
-  price: '',
-  category: ''
-}
+import {useForm} from 'react-hook-form'
 
 const AddProductForm = ({setProducts}) => {
-  const [data, setData] = useState(clearData)
+  const {register, reset, handleSubmit, formState: {errors}} = useForm({
+    mode: 'onChange'
+  })
 
-  const createProduct = e => {
-    e.preventDefault()
-    console.log({data})
-
+  const createProduct = data => {
     setProducts(prev => [{id: prev.length + 1, ...data}, ...prev ])
 
-    setData(clearData)
+    reset()
   }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit(createProduct)}>
       <input 
         className={styles.input} 
+        {...register('name', {required: 'error message'})} 
         type="text" 
-        placeholder="Type product's name" 
-        onChange={e => setData(prev => ({...prev, name: e.target.value}))} value={data.name}
+        placeholder="Type product's name"
       />
+      {errors?.name?.message && <p style={{color: 'red', fontWeight: 'bold'}}>Name is required!</p>}
+
       <input 
         className={styles.input} 
+        {...register('img', {required: 'error message'})} 
         type="text" 
-        placeholder="Put image's link" 
-        onChange={e => setData(prev => ({...prev, img: e.target.value}))} 
-        value={data.img}
+        placeholder="Put image's link"
       />
+      {errors?.img?.message && <p style={{color: 'red', fontWeight: 'bold'}}>Image is required!</p>}
+
       <input 
         className={styles.input} 
+        {...register('price', {required: 'error message'})} 
         type="text" 
-        placeholder="Type product's price" 
-        onChange={e => setData(prev => ({...prev, price: e.target.value}))} 
-        value={data.price}
+        placeholder="Type product's price"
       />
+      {errors?.price?.message && <p style={{color: 'red', fontWeight: 'bold'}}>Price is required!</p>}
+
       <input 
         className={styles.input} 
+        {...register('category', {required: 'error message'})} 
         type="text" 
-        placeholder="Type product's category" 
-        onChange={e => setData(prev => ({...prev, category: e.target.value}))} 
-        value={data.category}
+        placeholder="Type product's category"
       />
-      <button className={styles.btn} onClick={e => createProduct(e)}>Добавить новый продукт</button>
+      {errors?.category?.message && <p style={{color: 'red', fontWeight: 'bold'}}>Category is required!</p>}
+
+      <button className={styles.btn}>Добавить новый продукт</button>
       {/* <AddToCard onClick={e => createCar(e)}/>(Add new product) */}
     </form>
   )

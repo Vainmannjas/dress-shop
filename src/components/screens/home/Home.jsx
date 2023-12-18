@@ -39,7 +39,7 @@ const Home = () => {
         <div className="products__flex" style={{display: 'flex', flexwrap: 'wrap', justifyContent: 'space-between', gap: '20px'}}>
           <div className="sidepanel" style={{display: 'flex', flexDirection: 'column'}}>
 
-            {
+            {/* {
               user ? 
               <>
                 <h2>
@@ -50,7 +50,7 @@ const Home = () => {
               : <button onClick={() => setUser({
               name: 'Max'
               })}>Login</button>
-            }
+            } */}
 
             <AddProductForm setProducts={setProducts}/>
             <Sidebar/>
