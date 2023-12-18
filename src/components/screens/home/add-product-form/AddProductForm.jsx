@@ -1,13 +1,13 @@
 import styles from './AddProductForm.module.scss'
 import {useForm} from 'react-hook-form'
 
-const AddProductForm = ({setProducts}) => {
+const AddProductForm = () => {
   const {register, reset, handleSubmit, formState: {errors}} = useForm({
     mode: 'onChange'
   })
 
   const createProduct = data => {
-    setProducts(prev => [{id: prev.length + 1, ...data}, ...prev ])
+    // setProducts(prev => [{id: prev.length + 1, ...data}, ...prev ])
 
     reset()
   }
